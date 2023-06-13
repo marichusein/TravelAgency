@@ -1,0 +1,49 @@
+<div class="arrangement-form">
+    <div class="form-column">
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <mat-select [(value)]="selectedCountry" (selectionChange)="fetchCities()">
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Accommodation</mat-label>
+        <mat-select [(value)]="selectedAccommodation">
+          <mat-option *ngFor="let accommodation of accommodations" [value]="accommodation">
+            {{ accommodation.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="form-column">
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <mat-select [(value)]="selectedCity" (selectionChange)="fetchAccommodations()">
+          <mat-option *ngFor="let city of cities" [value]="city">
+            {{ city.cityName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Transport</mat-label>
+        <mat-select [(value)]="selectedTransport">
+          <mat-option *ngFor="let transport of transports" [value]="transport">
+            {{ transport.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Number of Persons</mat-label>
+        <input matInput type="number" [(ngModel)]="numberOfPersons">
+      </mat-form-field>
+  
+      <button mat-button color="primary" (click)="submitForm()">Submit</button>
+    </div>
+  </div>
+  
