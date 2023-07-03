@@ -166,8 +166,8 @@ namespace Service.TuristickaAgencija.Service
         public bool SendSms(string number)
         {
             var credentials = Credentials.FromApiKeyAndSecret(
-                                                                "0e3ea8a6",
-                                                                "jd5XaePGmCMjjtHh"
+                                                                "test",
+                                                                "test"
                                                                 );
 
             var VonageClient = new VonageClient(credentials);
